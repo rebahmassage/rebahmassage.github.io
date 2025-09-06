@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebah Massage & Reflexology - Professional Massage & Reflexology</title>
+    <meta name="description" content="Experience healing and relaxation with professional massage therapy and reflexology services. Licensed therapists, personalized treatments, and holistic wellness.">
+    <meta name="keywords" content="massage therapy, reflexology, wellness, relaxation, healing, therapeutic massage, deep tissue, Swedish massage">
+    <link rel="canonical" href="https://yourusername.github.io/your-repo-name/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FDEDBB;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #46486F;
+            color: #FDEDBB;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FDEDBB;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #FDEDBB;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FDEDBB;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FDEDBB;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(253, 237, 187, 0.6)), url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #46486F;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(253, 237, 187, 0.7);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #915437,  #FDEDBB);
+            color: #46486F;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 213, 186, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 213, 186, 0.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #46486F;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #915437;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Section */
+        .about {
+            background-color: #FDEDBB;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+            background: linear-gradient(135deg, #e8f5e8, #d4f0d4);
+            padding: 100px 20px;
+            border-radius: 15px;
+            color: #666;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #46486F;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            background: #FDEDBB;
+            color: #46486F;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card h3 {
+            color: #FDEDBB;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #FDEDBB;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-price {
+            color: #4a7c59;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Additional Section */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .additional-card {
+            background: #46486F;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .additional-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .additional-icon {
+            background: #FDEDBB;
+            color: #46486F;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .additional-card h3 {
+            color: #FDEDBB;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .additional-card p {
+            color: #FDEDBB;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .additional-price {
+            color: #4a7c59;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background-color: #FDEDBB;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .benefit-icon {
+            background: #46486F;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .benefit-item h4 {
+            color: #46486F;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Blog Section */
+        .blog-preview {
+            text-align: center;
+        }
+
+        .blog-intro {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            background: linear-gradient(135deg, #e8f5e8, #FDEDBB);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #46486F;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: #4a7c59;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #46486F;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #4a7c59;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #46486F;
+        }
+
+        .blog-cta {
+            background: linear-gradient(45deg, #FDEDBB, #7bc393);
+            color: #46486F;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .blog-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(168, 213, 186, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: #46486F;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item strong {
+            color: #4a7c59;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e8f5e8, #d4f0d4);
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #46486F;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #46486F;
+            color: #FDEDBB;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: #FDEDBB;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .about-image {
+            text-align: center;
+            background: linear-gradient(135deg, #e8f5e8, #d4f0d4);
+            padding: 100px 20px;
+            border-radius: 15px;
+            color: #666;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-logo {
+                max-width: 300px;
+                max-height: 150px;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add padding to account for fixed header */
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/FINAL LOGO_Rebah_PaleOrganza.png" alt="Rebah Massage & Reflexology">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="images/FINAL LOGO_Rebah_SkipperBlue.png" alt="Rebah Massage & Reflexology">
+            </div>
+            <p>Professional massage therapy and reflexology services for your complete wellness journey. Relax, restore, and rejuvenate with our expert care.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Rebah Massage & Reflexology, where healing and relaxation come together. With over 10 years of experience in therapeutic massage and reflexology, we're dedicated to helping you achieve optimal wellness and peace of mind.</p>
+                    
+                    <p>Our licensed massage therapists specialize in various techniques designed to address your unique needs, whether you're seeking relief from chronic pain, stress reduction, or simply want to indulge in some well-deserved self-care.</p>
+                    
+                    <p>We believe in the power of touch to heal, restore, and rejuvenate both body and spirit. Every session is tailored to your individual needs in our peaceful, calming environment.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/treatment-room.jpg" alt="Treatment Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">BM</div>
+                    <h3>Body Massage</h3>
+                    <p>Deep tissue and Swedish massage techniques to relieve tension, improve circulation, and promote healing. Perfect for chronic pain and stress relief.</p>
+                    <div class="service-price"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">RX</div>
+                    <h3>Reflexology</h3>
+                    <p>Ancient healing art that applies pressure to specific points on feet and hands to promote wellness throughout the entire body.</p>
+                    <div class="service-price"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">SR</div>
+                    <h3>Sports Massage</h3>
+                    <p>Smooth, heated stones are placed on specific points of your body to warm and loosen tight muscles and balance energy centers.</p>
+                    <div class="service-price"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Services Section -->
+    <section id="additional">
+        <div class="container">
+            <h2 class="section-title">Additional Services</h2>
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <h3>Dry Cupping (Kop Kering)</h3>
+                    <p>Deep tissue and Swedish massage techniques to relieve tension, improve circulation, and promote healing. Perfect for chronic pain and stress relief.</p>
+                    <div class="service-price"></div>
+                </div>
+                <div class="additional-card">
+                    <h3>Guasha (Kerik)</h3>
+                    <p>Ancient healing art that applies pressure to specific points on feet and hands to promote wellness throughout the entire body.</p>
+                    <div class="additional-price"></div>
+                </div>
+                <div class="additional-card">
+                    <h3>Facial Massage (Totok Wajah)</h3>
+                    <p>Smooth, heated stones are placed on specific points of your body to warm and loosen tight muscles and balance energy centers.</p>
+                    <div class="service-price"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefits of Our Treatments</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">💆</div>
+                    <h4>Stress Relief</h4>
+                    <p>Reduce cortisol levels and promote deep relaxation</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💪</div>
+                    <h4>Pain Management</h4>
+                    <p>Alleviate chronic pain and muscle tension</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧘</div>
+                    <h4>Better Sleep</h4>
+                    <p>Improve sleep quality and duration</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💚</div>
+                    <h4>Improved Circulation</h4>
+                    <p>Enhance blood flow and oxygen delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="blog-preview">
+        <div class="container">
+            <h2 class="section-title">Wellness Blog</h2>
+            <div class="blog-intro">
+                <p>Stay informed about wellness, massage therapy techniques, and tips for better health. Our blog features expert insights and practical advice for your wellness journey.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">Massage Benefits</div>
+                    <div class="blog-content">
+                        <div class="blog-date">December 15, 2024</div>
+                        <h3 class="blog-title">5 Benefits of Regular Massage Therapy</h3>
+                        <p class="blog-excerpt">Discover how regular massage therapy can improve your physical and mental well-being, from reducing stress to boosting immunity...</p>
+                        <a href="blog/benefits-of-massage-therapy.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">Reflexology Guide</div>
+                    <div class="blog-content">
+                        <div class="blog-date">December 10, 2024</div>
+                        <h3 class="blog-title">Understanding Reflexology: A Beginner's Guide</h3>
+                        <p class="blog-excerpt">Learn about the ancient art of reflexology and how pressure points on your feet can promote healing throughout your body...</p>
+                        <a href="blog/reflexology-beginners-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">Self-Care Tips</div>
+                    <div class="blog-content">
+                        <div class="blog-date">December 5, 2024</div>
+                        <h3 class="blog-title">Self-Care Tips for Busy Professionals</h3>
+                        <p class="blog-excerpt">Simple yet effective self-care strategies that busy professionals can easily incorporate into their daily routine...</p>
+                        <a href="blog/self-care-busy-professionals.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <a href="blog/" class="blog-cta">View All Articles</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <strong>📍 Address:</strong> 123 Wellness Street, Peaceful City, PC 12345
+                    </div>
+                    <div class="contact-item">
+                        <strong>📞 Phone:</strong> (555) 123-4567
+                    </div>
+                    <div class="contact-item">
+                        <strong>✉️ Email:</strong> info@serenitywellness.com
+                    </div>
+                    <div class="contact-item">
+                        <strong>🕐 Hours:</strong> Mon-Fri: 9AM-7PM, Sat: 9AM-5PM, Sun: Closed
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Book Your Session</h3>
+                    <p>Call us or email to schedule your appointment. We recommend booking in advance to ensure your preferred time slot.</p>
+                </div>
+                <div class="map-placeholder">
+                    Interactive Map Coming Soon
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rebah Massage & Reflexology. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = '#46486F';
+            } else {
+                header.style.background = '#46486F';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
